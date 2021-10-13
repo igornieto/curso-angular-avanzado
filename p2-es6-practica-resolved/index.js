@@ -42,7 +42,27 @@ const newEmployeeInfo = {
 //         \ /
 //          V
 
+const combineUserData = (user, employeeInfo) => {
+  return {
+    ...user,
+    company: employeeInfo.company,
+    charge: employeeInfo.charge
+  }
+}
 
+// BONUS
+const combineUserData2 = (user, employeeInfo) => {
+  const {company, charge} = employeeInfo
+  return {
+    ...user,
+    company,
+    charge
+  }
+}
+
+const newUser = combineUserData(newUserData, newEmployeeInfo);
+console.log(newUser);
+console.log(combineUserData2(newUserData, newEmployeeInfo));
 
 // 2. Añade el resultado al listado de usuarios con el operador Spread y devuelvelo por consola
 //          |
@@ -51,7 +71,8 @@ const newEmployeeInfo = {
 //         \ /
 //          V
 
-
+userList = [...userList, newUser]
+console.log(userList);
 
 // 3. Devuelve por consola los usuarios que superen los 30 años
 //          |
@@ -60,6 +81,8 @@ const newEmployeeInfo = {
 //         \ /
 //          V
 
+const over30 = userList.filter(u => u.age > 30);
+console.log(over30);
 
 // 4. Suma las edades de todos los empleados
 //          |
@@ -67,3 +90,8 @@ const newEmployeeInfo = {
 //        \   /
 //         \ /
 //          V
+
+const sumAges = userList.reduce((total, u) => {
+  return total + u.age
+}, 0);
+console.log(sumAges);
