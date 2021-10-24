@@ -38,8 +38,8 @@ const newEmployeeInfo = {
 // Tras declararla llámala y devuelve su resultado por consola 
 //          |
 //          |
-//        \   /
-//         \ /
+//        \ | /
+//         \|/
 //          V
 
 
@@ -47,8 +47,8 @@ const newEmployeeInfo = {
 // 2. Añade el resultado al listado de usuarios con el operador Spread y devuelvelo por consola
 //          |
 //          |
-//        \   /
-//         \ /
+//        \ | /
+//         \|/
 //          V
 
 
@@ -56,14 +56,14 @@ const newEmployeeInfo = {
 // 3. Devuelve por consola los usuarios que superen los 30 años
 //          |
 //          |
-//        \   /
-//         \ /
+//        \ | /
+//         \|/
 //          V
 
 
 // 4. Suma las edades de todos los empleados
 //          |
 //          |
-//        \   /
-//         \ /
+//        \ | /
+//         \|/
 //          V
