@@ -82,20 +82,20 @@
  * 6. Promises
  ======================================*/
 
-// const multiplier = (number) => {
-//   const promise = new Promise((resolve, reject) => {
-//     const result = number * number;
-//     if(result > 50) {
-//       reject('El número es muy alto')
-//     }
+const multiplier = (number) => {
+  const promise = new Promise((resolve, reject) => {
+    const result = number * number;
+    if(result > 50) {
+      reject('El número es muy alto')
+    }
 
-//     setTimeout(() => {
-//       resolve(result);
-//     }, 1000)
-//   })
+    setTimeout(() => {
+      resolve(result);
+    }, 1000)
+  })
 
-//   return promise
-// }
+  return promise
+}
 
 // multiplier(6)
 //   .then(res => {
@@ -103,7 +103,7 @@
 //     return multiplier(res);
 //   })
 
-// multiplier(6)
+// multiplier(2)
 //   .then(res => {
 //     console.log(res);
 //     return multiplier(res);
@@ -135,19 +135,19 @@
  * 7. Valores por defecto de los parametros de una función
  ======================================*/
 
-// // OK
+// OK
 // const foo = (arg1, arg2 = 2) => {
 //   return arg1 * arg2;
 // }
 
+// // console.log(foo(4));
+
+// // // KO
+// // const fooKO = (arg2 = 2, arg1) => {
+// //   return arg1 * arg2;
+// // }
+
 // console.log(foo(4));
-
-// // KO
-// const fooKO = (arg2 = 2, arg1) => {
-//   return arg1 * arg2;
-// }
-
-// console.log(fooKO(4));
 
 /** ======================================
  * 8. Parámetro rest de una función
@@ -178,8 +178,8 @@
 
 // let userModified = {
 //   ...user,
-//   age: 33,
-//   company: 'Workohölics'
+//   company: 'Workohölics',
+//   isAdmin: true
 // }
 
 // console.log(userModified);
@@ -209,6 +209,7 @@
 // const colors = ['Red', 'Blue', 'Black', 'White'];
 // const colorsClone = [...colors];
 
+// console.log(colors);
 // console.log(colorsClone);
 
 /** ======================================
@@ -229,27 +230,29 @@
 // // Arrow function de ES6
 
 // var numbers1 = [45, 4, 9, 16, 25];
-// var numbers2 = numbers1.map(n => n * 2);
+// var numbers2 = numbers1.map((n) => n * 2);
 
 // console.log(numbers2);
 
 // //  ****** Array.filter() ********
 
-// var numbers = [45, 4, 9, 16, 25];
-// var over18 = numbers.filter(myFunction);
+var numbers = [45, 4, 9, 16, 25];
+var over18 = numbers.filter(myFunction);
 
-// function myFunction(value) {
-//   return value > 18;
-// }
+function myFunction(value) {
+  return value > 18;
+}
 
-// console.log(over18);
+console.log(over18);
 
 // // Arrow function de ES6
 
-// var numbers = [45, 4, 9, 16, 25];
-// var over18 = numbers.filter(n => n > 18);
+var numbers = [45, 4, 9, 16, 25];
+var over18 = numbers.filter(n => {
+  return n > 18;
+});
 
-// console.log(over18);
+console.log(over18);
 
 // ****** Array.reduce() ********
 
@@ -304,3 +307,22 @@
 // let firstIndex = numbers.findIndex((value, index, array) => value > 18);
 
 // console.log(firstIndex);
+
+// const users = [
+//   {
+//     name: 'Igor',
+//     age: 32
+//   },
+//   {
+//     name: 'Ainhoa',
+//     age: 40
+//   },
+//   {
+//     name: 'Dani',
+//     age: 20
+//   }
+// ];
+
+// let usersFiltered = users.filter(u => u.age > 30);
+
+// console.log(usersFiltered);
