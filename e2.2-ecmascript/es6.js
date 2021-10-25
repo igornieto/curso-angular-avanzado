@@ -236,41 +236,41 @@ const multiplier = (number) => {
 
 // //  ****** Array.filter() ********
 
-var numbers = [45, 4, 9, 16, 25];
-var over18 = numbers.filter(myFunction);
+// var numbers = [45, 4, 9, 16, 25];
+// var over18 = numbers.filter(myFunction);
 
-function myFunction(value) {
-  return value > 18;
-}
+// function myFunction(value) {
+//   return value > 18;
+// }
 
-console.log(over18);
+// console.log(over18);
 
-// // Arrow function de ES6
+// // // Arrow function de ES6
 
-var numbers = [45, 4, 9, 16, 25];
-var over18 = numbers.filter(n => {
-  return n > 18;
-});
+// var numbers = [45, 4, 9, 16, 25];
+// var over18 = numbers.filter(n => {
+//   return n > 18;
+// });
 
-console.log(over18);
+// console.log(over18);
 
 // ****** Array.reduce() ********
 
-// var numbers1 = [45, 4, 9, 16, 25];
-// var sum = numbers1.reduce(myFunction);
+var numbers1 = [45, 4, 9, 16, 25];
+var sum = numbers1.reduce(myFunction);
 
-// function myFunction(accumulator, item) {
-//   return accumulator + item;
-// }
+function myFunction(accumulator, item) {
+  return accumulator + item;
+}
 
-// console.log(sum);
+console.log(sum);
 
 // // Arrow function de ES6
 
-// var numbers1 = [45, 4, 9, 16, 25];
-// var sum = numbers1.reduce((acc, item) => acc + item);
+var numbers1 = [45, 4, 9, 16, 25];
+var sum = numbers1.reduce((acc, item) => acc + item);
 
-// console.log(sum);
+console.log(sum);
 
 // //  ****** Array.find() ********
 
