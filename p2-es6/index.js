@@ -5,6 +5,7 @@
   Dadas las siguientes variables completa las siguientes operaciones que se indican en los comentarios utilizando ES6:
 */
 
+
 let userList = [
   {
     id: 1,

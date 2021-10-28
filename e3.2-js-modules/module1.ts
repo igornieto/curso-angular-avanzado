@@ -12,5 +12,11 @@ class Dog extends Animal {
   }
 }
 
-export default Dog
-
+class Cat extends Animal {
+  woof(times: number) {
+    for (let i = 0; i < times; i++) {
+      console.log("woof!");
+    }
+  }
+}
+export { Animal, Dog, Cat}

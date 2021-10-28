@@ -1,0 +1,23 @@
+:host {
+  --color: black;
+  display: block;
+  background-color: white;
+
+  h2, p {
+    color: var(--color);
+  }
+
+  input {
+    height: var(--input-height);
+  }
+}
+
+:host(.dark-mode),
+:host-context(.dark-mode)  {
+  background-color: black;
+  h2, p {
+    color: white;
+  }
+}
+
+
