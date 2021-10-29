@@ -4,24 +4,22 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './containers/app.component';
 import { HelloWorldComponent } from './components/hello-world.component';
-import { MatButtonModule } from '@angular/material/button';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
+import { SharedModule } from '../shared/shared.module';
+import { MenuComponent } from './components/menu.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HelloWorldComponent
+    HelloWorldComponent,
+    MenuComponent
   ],
   imports: [
     CommonModule,
     BrowserModule,
     RouterModule,
-    MatButtonModule,
-    MatFormFieldModule,
-    MatInputModule
+    SharedModule
   ],
   providers: [],
 })
