@@ -6,6 +6,8 @@ import { AppComponent } from './containers/app.component';
 import { HelloWorldComponent } from './components/hello-world.component';
 import { SharedModule } from '../shared/shared.module';
 import { MenuComponent } from './components/menu.component';
+import { WeatherService } from './services/weather.service';
+import { HighLightDirective } from './directives/highlight.directive';
 
 
 
@@ -13,7 +15,8 @@ import { MenuComponent } from './components/menu.component';
   declarations: [
     AppComponent,
     HelloWorldComponent,
-    MenuComponent
+    MenuComponent,
+    HighLightDirective
   ],
   imports: [
     CommonModule,
@@ -21,6 +24,6 @@ import { MenuComponent } from './components/menu.component';
     RouterModule,
     SharedModule
   ],
-  providers: [],
+  providers: [WeatherService],
 })
 export class CoreModule { }
