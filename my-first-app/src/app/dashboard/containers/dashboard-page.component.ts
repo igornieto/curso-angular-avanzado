@@ -3,7 +3,12 @@ import { Component } from "@angular/core";
 @Component({
   selector: 'dashboard-page',
   template: `
-    <h1>Soy el dashboard</h1>
+    <div class="wrapper">
+      <header>
+        <h1>Dashboard</h1>
+      </header>
+      <profile></profile>
+    </div>
   `
 })
 export class DashboardPageComponent {
