@@ -4,22 +4,15 @@ import { Component } from "@angular/core";
 @Component({
   selector: 'example',
   template: `
-    <div *ngIf="!loading; else loadingTemplate">
-      <p>Hola mundo</p>
-    </div>
+    <p>My birthday is: {{date | date: 'longDate' | uppercase }}</p>
 
-    <ng-template #loadingTemplate>
-      Loading...
-    </ng-template>
+    <p>Price:  {{amount | currency: 'EUR' }}</p>
+
+    <p>Exponential: {{amount | exp : 10}}</p>
   `
 })
 export class ExampleComponent {
-  loading = true;
-
-  constructor() {
-    setTimeout(() => {
-      this.loading = false;
-    }, 3000)
-  }
+  date = new Date(1989, 2, 6);
+  amount = 10;
 }
 

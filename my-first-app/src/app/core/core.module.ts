@@ -9,6 +9,7 @@ import { MenuComponent } from './components/menu.component';
 import { WeatherService } from './services/weather.service';
 import { HighLightDirective } from './directives/highlight.directive';
 import { ExampleComponent } from './components/example.component';
+import { ExponentialPipe } from '../shared/pipes/exponential.pipe';
 
 
 
@@ -18,7 +19,8 @@ import { ExampleComponent } from './components/example.component';
     HelloWorldComponent,
     MenuComponent,
     HighLightDirective,
-    ExampleComponent
+    ExampleComponent,
+    ExponentialPipe
   ],
   imports: [
     CommonModule,
