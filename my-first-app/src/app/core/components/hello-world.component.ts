@@ -61,6 +61,8 @@ import { WeatherInfo } from "../models/weather.model";
     <hr>
 
     <p [highlight]="'green'" [defaultColor]="'orange'">Hello world resaltado</p>
+
+    <hr>
   `,
   styleUrls: ['./hello-world.component.scss']
 })
@@ -85,6 +87,10 @@ export class HelloWorldComponent {
     this.weatherService.getWeatherByCity('Madrid').then(w => {
       this.currentWeather = w as WeatherInfo;
     })
+  }
+
+  foo(value: {name: string; age: number}) {
+    console.log(value);
   }
 
   manageStyle() {

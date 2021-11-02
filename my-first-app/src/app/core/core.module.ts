@@ -8,6 +8,7 @@ import { SharedModule } from '../shared/shared.module';
 import { MenuComponent } from './components/menu.component';
 import { WeatherService } from './services/weather.service';
 import { HighLightDirective } from './directives/highlight.directive';
+import { ExampleComponent } from './components/example.component';
 
 
 
@@ -16,7 +17,8 @@ import { HighLightDirective } from './directives/highlight.directive';
     AppComponent,
     HelloWorldComponent,
     MenuComponent,
-    HighLightDirective
+    HighLightDirective,
+    ExampleComponent
   ],
   imports: [
     CommonModule,
