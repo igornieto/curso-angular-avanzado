@@ -5,6 +5,7 @@ import { MovieComponent } from "./components/movie.component";
 import { MoviesDetailPageComponent } from "./containers/movies-detail.component";
 import { MoviesPageComponent } from "./containers/movies-page.component";
 import { MoviesRoutingModule } from "./movies-routing.module";
+import { MoviesService } from "./services/movies.service";
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { MoviesRoutingModule } from "./movies-routing.module";
     CommonModule,
     SharedModule,
     MoviesRoutingModule
-  ]
+  ],
+  providers: [MoviesService]
 })
 export class MoviesModule {}

@@ -4,4 +4,11 @@ export interface Movie {
   poster?: string;
   adult: boolean;
   vote: number;
-} 
+}
+
+export interface MoviesList {
+  page: number;
+  totalResults: number;
+  totalPages: number;
+  results: Movie[];
+}

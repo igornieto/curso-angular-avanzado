@@ -17,7 +17,7 @@ import { Movie } from "../models/movie.model";
         <span class="adult" *ngIf="movie.adult">+18</span>
       </figure>
       <mat-card-content>
-        <p>{{movie.overview}}</p>
+        <p>{{movie.overview | trunc : 140 : '[...]'}}</p>
       </mat-card-content>
     </mat-card>
   `,
