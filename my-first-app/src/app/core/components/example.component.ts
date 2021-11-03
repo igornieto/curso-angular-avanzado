@@ -1,18 +1,21 @@
 
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 
 @Component({
   selector: 'example',
   template: `
-    <p>My birthday is: {{date | date: 'longDate' | uppercase }}</p>
+    <p>Value 1: {{value1}}</p>
+    <p>Value 2: {{value2}}</p>
+    <p>Value 3: {{value3}}</p>
+    <p *ngIf="value4">Value 4: {{value4.name}} {{value4.age}}</p>
+    <p>Value 4: {{value4?.name}} {{value4?.age}}</p>
 
-    <p>Price:  {{amount | currency: 'EUR' }}</p>
-
-    <p>Exponential: {{amount | exp : 10}}</p>
   `
 })
 export class ExampleComponent {
-  date = new Date(1989, 2, 6);
-  amount = 10;
+  @Input() value1: string = 'Soy un input';
+  @Input() value2?: string;
+  @Input() value3?: number;
+  @Input() value4?: { name: string; age?: number;};
 }
 
