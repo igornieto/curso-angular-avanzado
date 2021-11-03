@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template: `
     <menu></menu>
-    <example></example>
+    <!-- <example></example> -->
     <router-outlet></router-outlet>
   `,
   styleUrls: ['./app.component.scss']

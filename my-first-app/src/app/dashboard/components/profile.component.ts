@@ -15,7 +15,6 @@ import { ProfileService } from "../services/profile.service";
           <a [href]="'mailto:' + profile.email">{{profile.email}}</a>
           
           <p *ngIf="!showMore; else descriptionComplete">{{text | trunc : 100}}</p>
-
           <ng-template #descriptionComplete>
             <p>{{text}}</p>
           </ng-template>

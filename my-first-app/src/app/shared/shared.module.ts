@@ -3,20 +3,22 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { MatChipsModule } from '@angular/material/chips';
-import { ExponentialPipe } from "./pipes/exponential.pipe";
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   imports: [
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    MatChipsModule
+    MatChipsModule,
+    MatCardModule
   ],
   exports: [
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    MatChipsModule
+    MatChipsModule,
+    MatCardModule
   ]
 })
 export class SharedModule {}
