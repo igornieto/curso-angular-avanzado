@@ -4,11 +4,11 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template: `
     <menu></menu>
-    <example>
+    <!-- <example>
       <h1 heading>Proyección multislot</h1>
       <div actions><button>Action 1</button></div>
       This is the body
-    </example>
+    </example> -->
     <router-outlet></router-outlet>
   `,
   styleUrls: ['./app.component.scss']
