@@ -5,9 +5,17 @@ import { MatInputModule } from "@angular/material/input";
 import { MatChipsModule } from '@angular/material/chips';
 import { MatCardModule } from '@angular/material/card';
 import { TruncatePipe } from "./pipes/trunc.pipe";
+import { PaginationComponent } from "./components/pagination.component";
+import { NextIcon } from "./icons/next.icon";
+import { PrevIcon } from "./icons/prev.icon";
 
 @NgModule({
-  declarations: [TruncatePipe],
+  declarations: [
+    TruncatePipe,
+    PaginationComponent,
+    NextIcon,
+    PrevIcon
+  ],
   imports: [
     MatButtonModule,
     MatFormFieldModule,
@@ -21,7 +29,8 @@ import { TruncatePipe } from "./pipes/trunc.pipe";
     MatInputModule,
     MatChipsModule,
     MatCardModule,
-    TruncatePipe
+    TruncatePipe,
+    PaginationComponent
   ]
 })
 export class SharedModule {}

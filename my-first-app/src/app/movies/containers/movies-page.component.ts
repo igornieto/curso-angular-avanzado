@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { Movie, MoviesList } from "../models/movie.model";
+import { MoviesList } from "../models/movie.model";
 import { MoviesService } from "../services/movies.service";
 
 @Component({
@@ -9,9 +9,21 @@ import { MoviesService } from "../services/movies.service";
       <header>
         <h1>Últimas películas</h1>
       </header>
-      <div class="list-movies">
-        <movie *ngFor="let movie of movies?.results" [movie]="movie"></movie>
-      </div>
+      <ng-container *ngIf="!loading; else loader">
+        <div class="list-movies">
+          <movie *ngFor="let movie of movies?.results" [movie]="movie"></movie>
+        </div>
+        <pagination 
+          [currentPage]="this.currentPage"
+          [totalPages]="this.movies?.totalPages"
+          (onNext)="change($event)"
+          (onPrev)="change($event)">
+        </pagination>
+      </ng-container>
+
+      <ng-template #loader>
+        Loading...
+      </ng-template>
     </div>
   `,
   styleUrls: ['./movies-page.component.scss']
@@ -19,10 +31,23 @@ import { MoviesService } from "../services/movies.service";
 export class MoviesPageComponent {
 
   movies?: MoviesList;
+  currentPage: number = 1;
+  loading: boolean = true;
 
-  constructor(moviesService: MoviesService) {
+  constructor(private moviesService: MoviesService) {
     moviesService.getMovies().then((res: any) => {
       this.movies = res;
+      this.loading = false;
     });
   }
+
+  change(page: number) {
+    this.loading = true;
+    this.currentPage = page;
+    this.moviesService.getMovies(this.currentPage).then((res: any) => {
+      this.movies = res;
+      this.loading = false;
+    });
+  }
+
 }
