@@ -10,6 +10,7 @@ import { WeatherService } from './services/weather.service';
 import { HighLightDirective } from './directives/highlight.directive';
 import { ExampleComponent } from './components/example.component';
 import { ExponentialPipe } from '../shared/pipes/exponential.pipe';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -26,7 +27,8 @@ import { ExponentialPipe } from '../shared/pipes/exponential.pipe';
     CommonModule,
     BrowserModule,
     RouterModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ],
   providers: [WeatherService],
 })
