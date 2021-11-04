@@ -22,7 +22,9 @@ import { MoviesService } from "../services/movies.service";
       </ng-container>
 
       <ng-template #loader>
-        Loading...
+        <div class="loader">
+          <mat-spinner [diameter]="45" [strokeWidth]="5"></mat-spinner>
+        </div>
       </ng-template>
     </div>
   `,

@@ -8,6 +8,9 @@ import { TruncatePipe } from "./pipes/trunc.pipe";
 import { PaginationComponent } from "./components/pagination.component";
 import { NextIcon } from "./icons/next.icon";
 import { PrevIcon } from "./icons/prev.icon";
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatSelectModule} from '@angular/material/select';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +24,9 @@ import { PrevIcon } from "./icons/prev.icon";
     MatFormFieldModule,
     MatInputModule,
     MatChipsModule,
-    MatCardModule
+    MatCardModule,
+    MatProgressSpinnerModule,
+    MatSelectModule
   ],
   exports: [
     MatButtonModule,
@@ -30,7 +35,9 @@ import { PrevIcon } from "./icons/prev.icon";
     MatChipsModule,
     MatCardModule,
     TruncatePipe,
-    PaginationComponent
+    PaginationComponent,
+    MatProgressSpinnerModule,
+    MatSelectModule
   ]
 })
 export class SharedModule {}
