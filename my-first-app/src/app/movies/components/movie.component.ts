@@ -4,7 +4,7 @@ import { Movie } from "../models/movie.model";
 @Component({
   selector: 'movie',
   template: `
-    <mat-card *ngIf="movie" class="example-card">
+    <mat-card [routerLink]="'/movies/' + movie.id" *ngIf="movie" class="example-card">
       <mat-card-header>
         <mat-card-title>{{movie.title}}</mat-card-title>
         <mat-card-subtitle>{{movie.vote}}</mat-card-subtitle>

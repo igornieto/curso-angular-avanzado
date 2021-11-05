@@ -10,6 +10,7 @@ import { NextIcon } from "./icons/next.icon";
 import { PrevIcon } from "./icons/prev.icon";
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatSelectModule} from '@angular/material/select';
+import { StarIcon } from "./icons/star.icon";
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import {MatSelectModule} from '@angular/material/select';
     TruncatePipe,
     PaginationComponent,
     NextIcon,
-    PrevIcon
+    PrevIcon,
+    StarIcon
   ],
   imports: [
     MatButtonModule,
@@ -37,7 +39,8 @@ import {MatSelectModule} from '@angular/material/select';
     TruncatePipe,
     PaginationComponent,
     MatProgressSpinnerModule,
-    MatSelectModule
+    MatSelectModule,
+    StarIcon
   ]
 })
 export class SharedModule {}

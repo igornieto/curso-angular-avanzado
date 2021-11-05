@@ -10,7 +10,7 @@ const routes : Routes = [
     component: MoviesPageComponent
   },
   {
-    path: 'movie/:id',
+    path: ':id',
     component: MoviesDetailPageComponent
   }
 ] 

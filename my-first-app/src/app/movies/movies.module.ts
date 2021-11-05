@@ -1,6 +1,8 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
+import { ReactiveFormsModule } from "@angular/forms";
 import { SharedModule } from "../shared/shared.module";
+import { CommentsForm } from "./components/comments-form.component";
 import { MovieComponent } from "./components/movie.component";
 import { MoviesDetailPageComponent } from "./containers/movies-detail.component";
 import { MoviesPageComponent } from "./containers/movies-page.component";
@@ -11,12 +13,14 @@ import { MoviesService } from "./services/movies.service";
   declarations: [
     MoviesPageComponent,
     MoviesDetailPageComponent,
-    MovieComponent
+    MovieComponent,
+    CommentsForm
   ],
   imports: [
     CommonModule,
     SharedModule,
-    MoviesRoutingModule
+    MoviesRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [MoviesService]
 })

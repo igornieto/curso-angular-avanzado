@@ -22,6 +22,7 @@ export class MoviesService {
         if(res) {
           const results = res.results.map((m: any) => {
             return {
+              id: m.id,
               title: m.title,
               overview: m.overview,
               adult: m.adult,
@@ -42,6 +43,35 @@ export class MoviesService {
       })
       .catch(err => {
         console.log('Error obteniendo películas', err);
+      })
+  }
+
+  getMovie(id: number) {
+    return fetch(`${BASE_ENDPOINT}movie/${id}?api_key=${API_KEY}&language=en-US`)
+      .then(res => {
+        if(res.ok) {
+          return res.json();
+        }
+        else {
+          return { success: false, error: 'Error obteniendo las películas' };
+        }
+      })
+      .then(res => {
+        if(res.success && res.success === false) { return res } 
+        const movie = {
+          id: res.id,
+          adult: res.adult,
+          overview: res.overview,
+          title: res.title,
+          poster: IMAGE_BASEPATH + res.poster_path,
+          vote: res.vote_average,
+          genres: res.genres
+        } as Movie;
+        return { success: true, result: movie };
+      })
+      .catch(err => {
+        console.log('Error obteniendo las películas');
+        return { success: false, error: 'Error obteniendo las películas'}
       })
   }
 }
