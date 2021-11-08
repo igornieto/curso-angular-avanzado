@@ -19,3 +19,10 @@ export interface MoviesList {
   totalPages: number;
   results: Movie[];
 }
+
+export interface Comment {
+  name: string;
+  genre: '' | 'Ciencia ficción' | 'Drama' | 'Acción';
+  message: string;
+  vote: number;
+}

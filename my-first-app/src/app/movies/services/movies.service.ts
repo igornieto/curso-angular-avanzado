@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Movie, MoviesList } from "../models/movie.model";
+import { Movie, MoviesList, Comment } from "../models/movie.model";
 
 const API_KEY = '91f024697109b9ee4aa0237feb466ea1';
 const BASE_ENDPOINT = 'https://api.themoviedb.org/3/';
@@ -73,5 +73,15 @@ export class MoviesService {
         console.log('Error obteniendo las películas');
         return { success: false, error: 'Error obteniendo las películas'}
       })
+  }
+
+  sendComment(id: number, comment: Comment) {
+    return fetch(`${BASE_ENDPOINT}movie/${id}/rating?api_key=${API_KEY}`, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        value: comment.vote
+      })
+    })
   }
 }

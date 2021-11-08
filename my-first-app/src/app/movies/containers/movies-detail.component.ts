@@ -2,11 +2,17 @@ import { Component } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { Movie } from "../models/movie.model";
 import { MoviesService } from "../services/movies.service";
+import { Comment } from "../models/movie.model";
 
 @Component({
   selector: 'movies-detail-page',
   template: `
-    <h1>Soy la página de detalle</h1>
+    <div class="wrapper">
+      <header>
+        <h1>{{movie?.title}}</h1>
+      </header>
+      <comments-form (onSubmit)="submit($event)"></comments-form>
+    </div>
   `
 })
 export class MoviesDetailPageComponent {
@@ -15,7 +21,7 @@ export class MoviesDetailPageComponent {
 
   constructor(
     route: ActivatedRoute, 
-    moviesService: MoviesService
+    private moviesService: MoviesService
   ) {
     route.params.subscribe(params => {
       const id = parseInt(params['id'])
@@ -27,6 +33,14 @@ export class MoviesDetailPageComponent {
           })
       }
     })
+  }
+
+  submit(comment: Comment) {
+    debugger;
+    if(this.movieId) {
+      this.moviesService.sendComment(this.movieId, comment);
+    }
+    
   }
 
 }
